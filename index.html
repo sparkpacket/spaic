@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SparkPacket Intelligence Center — SPAiC (prototype)</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- TensorFlow.js (browser build) -->
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.22.0/dist/tf.min.js"></script>
+  <!-- Neataptic for neuro-evolution (CDN) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/neataptic/1.4.7/neataptic.min.js"></script>
+</head>
+<body>
+  <header><h1>SparkPacket Intelligence Center — SPAiC (prototype)</h1></header>
+  <main class="grid">
+    <section class="left">
+      <h2>Corpus & Controls</h2>
+      <textarea id="corpus" placeholder="Type or paste text here...">Hello SparkPacket. This is the SPAiC corpus. Add text, then train or spawn agents.</textarea>
+      <div class="row">
+        <label>seqLen <input id="seqLen" type="number" value="20" min="2" max="200"></label>
+        <label>pop <input id="popSize" type="number" value="10" min="1" max="200"></label>
+      </div>
+      <div class="row">
+        <button id="trainTfBtn">Train TF model (short)</button>
+        <button id="spawnNeuroBtn">Spawn Neuro Agent</button>
+        <button id="evolveBtn">Evolve Population</button>
+      </div>
+      <div class="row">
+        <button id="stepSelfBtn">Step self-train (1 step)</button>
+        <button id="startLoopBtn">Start self-loop</button>
+        <button id="stopLoopBtn" disabled>Stop self-loop</button>
+      </div>
+
+      <h3>Model controls</h3>
+      <div class="row">
+        <button id="genTfBtn">Generate (TF)</button>
+        <button id="genNeuroBtn">Generate (Neuro)</button>
+      </div>
+
+      <h3>Save / Load</h3>
+      <div class="row">
+        <button id="downloadCorpus">Download Corpus</button>
+        <button id="clearCorpus">Clear Corpus</button>
+      </div>
+
+      <p class="note">This is a prototype. Training in-browser is limited by CPU/GPU and memory.</p>
+    </section>
+
+    <section class="center">
+      <h2>Visualization</h2>
+      <canvas id="viz" width="900" height="500"></canvas>
+      <div id="agentsInfo"></div>
+    </section>
+
+    <section class="right">
+      <h2>Agents</h2>
+      <div id="agentList"></div>
+    </section>
+  </main>
+
+  <footer>
+    <small>Prototype using TensorFlow.js + Neataptic. Host on GitHub Pages (static site).</small>
+  </footer>
+
+  <!-- core scripts -->
+  <script src="scripts/tfmodel.js"></script>
+  <script src="scripts/neuroevo.js"></script>
+  <script src="scripts/viz.js"></script>
+  <script src="scripts/main.js"></script>
+</body>
+</html>
