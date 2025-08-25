@@ -1,0 +1,28 @@
+:root {
+  --bg: #06060a;
+  --panel: #0f1720;
+  --muted: #9aa4b2;
+  --accent: #6ee7b7;
+  --glass: rgba(255,255,255,0.03);
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: linear-gradient(180deg, #020205 0%, #071224 100%);
+  color:#e6eef6;
+  -webkit-font-smoothing:antialiased;
+}
+header{padding:18px 28px;border-bottom:1px solid rgba(255,255,255,0.03)}
+h1{margin:0;font-size:20px}
+.grid{display:grid;grid-template-columns:320px 1fr 320px;gap:18px;padding:18px}
+.left,.center,.right{background:var(--panel);padding:12px;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,0.6)}
+textarea{width:100%;height:160px;background:var(--glass);border:1px solid rgba(255,255,255,0.03);color:inherit;padding:10px;border-radius:8px}
+.row{display:flex;gap:8px;align-items:center;margin-top:8px}
+button{background:#0b1220;border:1px solid rgba(255,255,255,0.03);padding:8px 10px;border-radius:8px;color:var(--accent);cursor:pointer}
+button:active{transform:translateY(1px)}
+label{font-size:13px;color:var(--muted)}
+#viz{width:100%;border-radius:8px;background:#031018;display:block}
+#agentsInfo{margin-top:8px;font-size:13px;color:var(--muted)}
+.note{font-size:12px;color:var(--muted);margin-top:12px}
+.agent-card{background:rgba(255,255,255,0.02);padding:8px;border-radius:6px;margin-bottom:8px}
